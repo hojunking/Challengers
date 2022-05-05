@@ -1,7 +1,7 @@
-package com.web.ch.test.controller;
+package com.web.ch.Challenger.test.controller;
 
-import com.web.ch.test.domain.EmployeeVO;
-import com.web.ch.test.service.EmployeesService;
+import com.web.ch.Challenger.test.domain.EmployeeVO;
+import com.web.ch.Challenger.test.service.EmployeesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,6 +1,6 @@
-package com.web.ch.test.mapper;
+package com.web.ch.Challenger.test.mapper;
 
-import com.web.ch.test.domain.EmployeeVO;
+import com.web.ch.Challenger.test.domain.EmployeeVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

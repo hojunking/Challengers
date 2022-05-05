@@ -1,4 +1,4 @@
-package com.web.ch.test.domain;
+package com.web.ch.Challenger.test.domain;
 
 import lombok.Data;
 

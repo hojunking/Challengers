@@ -1,7 +1,7 @@
-package com.web.ch.test.service;
+package com.web.ch.Challenger.test.service;
 
-import com.web.ch.test.domain.EmployeeVO;
-import com.web.ch.test.mapper.EmployeesMapper;
+import com.web.ch.Challenger.test.domain.EmployeeVO;
+import com.web.ch.Challenger.test.mapper.EmployeesMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
