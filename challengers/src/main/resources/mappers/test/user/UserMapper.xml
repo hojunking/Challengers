@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.ch.challengers.user.userMapper.UserMapper">
+    <select id="readAll" resultType="UserVO">
+        SELECT * FROM CH_USERS
+    </select>
+    <select id="read" resultType="UserVO">
+        SELECT * FROM CH_USERS
+        WHERE user_id =#{userId}
+    </select>
+    <insert id="insertUser">
+        <selectKey keyProperty="employeeId" resultType="int">
+            SELECT USERS_SEQUENCE.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO CH_USERS(user_name,
+                    email,
+                    nickname,
+                    password,
+                    phone_number,
+                    user_created,
+                    user_updated,
+                    user_status,
+                    user_level)
+                    VALUES (users_sequence.nextval,
+                            #{userName},
+                            #{email},
+                            #{nickName},
+                            #{password},
+                            #{phoneNumber},
+                            sysdate,
+                            sysdate,
+                            #{userStatus},
+                            #{userLevel});
+    </insert>
+    <update id="modifyUser">
+        UPDATE employees SET first_name = #{firstName},
+                             last_name = #{lastName},
+                             salary =#{salary}
+        WHERE employee_id = #{employeeId}
+
+
+    </update>
+
+</mapper>
