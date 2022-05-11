@@ -40,6 +40,12 @@
         #{managerId},
         #{departmentId})
     </insert>
+
+    <insert id="myinsert">
+        INSERT INTO EMPLOYEES (employee_id, last_name)
+        VALUES (#{employeeId}, #{lastName})
+    </insert>
+
     <update id="update">
         UPDATE employees SET first_name = #{firstName},
                              last_name = #{lastName},
