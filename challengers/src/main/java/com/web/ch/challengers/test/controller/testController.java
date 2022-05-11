@@ -26,12 +26,26 @@ public class testController {
         EmployeeVO vo =new EmployeeVO();
         vo.setEmployeeId(id);
         return service.read(vo);
+        //@RestController를 사용하면 내부적을 Jackson 라이브러리에 의해 VO객체를 JSON형태로 반환한다.
+        //@RestController = Controller + ResponseBody => 주용도 : Json 형태로 객체 데이터 반환
     }
+
+    @GetMapping("/emp2")
+    public String getTwo(EmployeeVO vo){
+        return vo.toString();
+    }
+
+
     //삽입
     @PostMapping("/emp")
     public void insert(EmployeeVO vo){
         service.insert(vo);
     }
+
+
+    @PostMapping("/emp/newinsert")
+    public void myinsert(EmployeeVO vo){service.insert(vo);}
+
     //수정
     @PostMapping("/empUpdate")
     public void update(EmployeeVO vo){
