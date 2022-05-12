@@ -1,4 +1,4 @@
-package com.web.ch.challengers.user.userMapper;
+package com.web.ch.challengers.user.mapper;
 
 
 import com.web.ch.challengers.user.domain.UserVO;

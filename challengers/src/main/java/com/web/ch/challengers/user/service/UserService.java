@@ -1,7 +1,7 @@
-package com.web.ch.challengers.user.userService;
+package com.web.ch.challengers.user.service;
 
 import com.web.ch.challengers.user.domain.UserVO;
-import com.web.ch.challengers.user.userMapper.UserMapper;
+import com.web.ch.challengers.user.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
