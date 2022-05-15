@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.ch.challengers.test.mapper.BoardMapper">
+    <insert id="insert">
+        INSERT INTO MYBOARD( BNO
+                            , TITLE
+                            , CONTENT
+                            , WRITER)
+                    VALUES ( MYBOARD_SEQ.NEXTVAL
+                            , #{title}
+                            , #{content}
+                            , #{writer})
+    </insert>
+</mapper>
