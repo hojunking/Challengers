@@ -37,7 +37,7 @@
         UPDATE CH_USERS SET nickname = #{nickname},
                              phone_number = #{phoneNumber},
                              user_updated = default
-        WHERE employee_id = #{employeeId}
+        WHERE user_id = #{userId}
     </update>
 
 </mapper>

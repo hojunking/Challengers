@@ -16,14 +16,14 @@ public class UserService {
         return map.readAll();
     }
 
-    public UserVO read() {
-        return map.read();
+    public UserVO read(UserVO vo) {
+        return map.read(vo);
     }
     public int insertUser(UserVO vo) {
         return 1;
     }
 
     public int modifyUser(UserVO vo) {
-        return 1;
+        return map.modifyUser(vo);
     }
 }
