@@ -18,19 +18,24 @@ public class RestController {
     @Autowired
     UserService service;
 
-    @GetMapping(path = "/userList") //전체조회
+    @GetMapping(path = "/userList") //전체조회(관리자)
     public List<UserVO> userList(){return service.readAll(); }
 
-    @GetMapping(path = "/readUser/{id}") //상세조회
+    @GetMapping(path = "/readUser/{id}") //상세조회(관리자)
     public UserVO readUser(@PathVariable int id){
         UserVO vo = new UserVO();
         vo.setUserId(id);
         return service.read(vo);
     }
-    @PostMapping(path = "/modifyUserInfo")
+    @PostMapping(path = "/modifyUserInfo") //회원정보수정(유저)
     public int modifyUserInfo(UserVO vo){
 
         return service.modifyUser(vo);
+    }
+
+    @PostMapping(path = "/registerUser") //회원가입
+    public int registerUser(UserVO vo){
+        return service.insertUser(vo);
     }
 
 
