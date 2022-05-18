@@ -1,5 +1,4 @@
 package com.web.ch.challengers.user.controller;
-
 import com.web.ch.challengers.user.domain.UserVO;
 import com.web.ch.challengers.user.service.UserService;
 import lombok.Getter;
@@ -35,8 +34,8 @@ public class RestController {
 
     @PostMapping(path = "/registerUser") //회원가입
     public int registerUser(UserVO vo){
+
         return service.insertUser(vo);
     }
-
 
 }
