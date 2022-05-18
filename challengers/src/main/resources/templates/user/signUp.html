@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+
+<!-- 페이지 css -->
+<th:block layout:fragment="css">
+
+</th:block>
+
+<!-- 페이지 html 내용-->
+<th:block layout:fragment="content">
+    <main>
+        <section class="bg-white position-relative">
+
+            <div class="container py-9 pt-lg-12 position-relative z-index-1">
+                <div class="row align-items-center justify-content-center">
+                    <div class=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
+
+                        <h2 class="mb-1 display-6">
+                            환영합니다!
+                        </h2>
+                        <br>
+
+                        <div class="position-relative">
+                            <div>
+                                <form id="signUp" action="/signUp" method="post" enctype="multipart/form-data">
+
+                                    <!-- email -->
+                                    <div class="input-icon-group mb-3">
+
+                                        <input type="email" class="form-control" name="email" required autofocus
+                                               placeholder="이메일">
+                                        <div id="signUpEmailValid"></div>
+                                    </div>
+                                    <!-- email -->
+
+                                    <!-- password -->
+                                    <div class="input-icon-group mb-3">
+
+                                        <input type="password" class="form-control" name="password" required
+                                               placeholder="비밀번호">
+                                        <div id="signUpPasswordValid"></div>
+                                    </div>
+                                    <!-- password -->
+
+                                    <!-- name -->
+                                    <div class="input-icon-group mb-3">
+
+                                        <input type="text" class="form-control" name="name" required placeholder="이름">
+                                    </div>
+                                    <!-- name -->
+
+                                    <!-- nickname -->
+                                    <div class="input-icon-group mb-3">
+                                        <input type="text" class="form-control" name="nickname" required
+                                               placeholder="닉네임">
+                                        <div id="signUpNicknameValid"></div>
+                                    </div>
+                                    <!-- nickname -->
+
+                                    <!-- phoneNum -->
+                                    <div class="input-icon-group mb-3">
+                                        <input type="text" class="form-control" name="phoneNum" required readonly
+                                               placeholder="전화번호" style="cursor: pointer;" value="010-9640-0615">
+                                    </div>
+                                    <!-- phoneNum -->
+                                    <div class="d-grid">
+                                        <button type="button" id="signUpBtn" class="btn btn-primary mb-3">
+                                            회원가입
+                                        </button>
+                                    </div>
+                                </form>
+
+
+                                <!-- Divider -->
+                                <div class="d-flex align-items-center py-3">
+                                    <span class="flex-grow-1 border-bottom pt-1"></span>
+                                    <span
+                                            class="d-inline-flex center-both lh-1 size-30 rounded-circle bg-white text-mono">or</span>
+                                    <span class="flex-grow-1 border-bottom pt-1"></span>
+                                </div>
+                                <!-- /Divider -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</th:block>
+
+<!-- 페이지 Js -->
+<th:block layout:fragment="script">
+    <!-- 사용자 Js-->
+    <script type="text/javascript">
+        let form = document.querySelector('#signUp');
+        //페이지 로드 시 작동
+        document.addEventListener("DOMContentLoaded", ()=> {
+            //form submit onclick
+            form.querySelector('#signUpBtn').on('click', () => {
+                //validation space
+                form.submit();
+            })
+        })
+
+    </script>
+
+</th:block>
+
+</html>
