@@ -1,7 +1,9 @@
 package com.web.ch.challengers.test.controller;
 
 import com.web.ch.challengers.test.domain.EmployeeVO;
+import com.web.ch.challengers.test.domain.TestVO;
 import com.web.ch.challengers.test.service.EmployeesService;
+import com.web.ch.challengers.test.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +16,18 @@ import java.util.List;
 public class testController {
     @Autowired
     EmployeesService service;
+    @Autowired
+    TestService testService;
 
+    //MariaDB Test
+    @GetMapping(path = "/mariaTest")
+    public List<TestVO> readTest() {
+        System.out.println("스팟1");
+        return testService.readMaria();
+    }
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //전체조회
     @GetMapping(path = "/emp")
     public List<EmployeeVO> empGet(){

@@ -16,8 +16,8 @@ public class UserService {
         return map.readAll();
     }
 
-    public UserVO read(UserVO vo) {
-        return map.read(vo);
+    public UserVO read(int id) {
+        return map.read(id);
     }
     public int insertUser(UserVO vo) {
         return 1;

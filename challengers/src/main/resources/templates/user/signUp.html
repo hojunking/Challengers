@@ -34,19 +34,10 @@
                                     </div>
                                     <!-- email -->
 
-                                    <!-- password -->
-                                    <div class="input-icon-group mb-3">
-
-                                        <input type="password" class="form-control" name="password" required
-                                               placeholder="비밀번호">
-                                        <div id="signUpPasswordValid"></div>
-                                    </div>
-                                    <!-- password -->
-
                                     <!-- name -->
                                     <div class="input-icon-group mb-3">
 
-                                        <input type="text" class="form-control" name="name" required placeholder="이름">
+                                        <input type="text" class="form-control" name="userName" required placeholder="이름">
                                     </div>
                                     <!-- name -->
 
@@ -58,12 +49,22 @@
                                     </div>
                                     <!-- nickname -->
 
+                                    <!-- password -->
+                                    <div class="input-icon-group mb-3">
+
+                                        <input type="password" class="form-control" name="password" required
+                                               placeholder="비밀번호">
+                                        <div id="signUpPasswordValid"></div>
+                                    </div>
+                                    <!-- password -->
+
                                     <!-- phoneNum -->
                                     <div class="input-icon-group mb-3">
-                                        <input type="text" class="form-control" name="phoneNum" required readonly
-                                               placeholder="전화번호" style="cursor: pointer;" value="010-9640-0615">
+                                        <input type="text" class="form-control" name="phoneNumber" placeholder="전화번호" >
                                     </div>
                                     <!-- phoneNum -->
+
+
                                     <div class="d-grid">
                                         <button type="button" id="signUpBtn" class="btn btn-primary mb-3">
                                             회원가입
@@ -86,24 +87,29 @@
                 </div>
             </div>
         </section>
-
     </main>
 </th:block>
 
 <!-- 페이지 Js -->
 <th:block layout:fragment="script">
     <!-- 사용자 Js-->
-    <script type="text/javascript">
-        let form = document.querySelector('#signUp');
-        //페이지 로드 시 작동
-        document.addEventListener("DOMContentLoaded", ()=> {
-            //form submit onclick
-            form.querySelector('#signUpBtn').on('click', () => {
-                //validation space
-                form.submit();
+    <script type="text/javascript" th:inline="javascript">
+            window.addEventListener('load',(event) => {
+                alert('페이지 전체가 로드되었습니다.');
+            //document.addEventListener("DOMContentLoaded", () => {
+                console.log('왜 안나와');
+                let form = document.querySelector('#signUp');
+                //페이지 로드 시 작동
+                let tmp = '페이지 열림';
+                console.log(tmp);
+                //form submit onclick
+                form.querySelector('#signUpBtn').on('click', () => {
+                    console.log("click!");
+                    //validation space
+                    form.submit();
+                })
+            // }) 
             })
-        })
-
     </script>
 
 </th:block>

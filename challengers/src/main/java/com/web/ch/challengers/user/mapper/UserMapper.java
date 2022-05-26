@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
     public List<UserVO> readAll();
-    public UserVO read(UserVO vo);
+    public UserVO read(int id);
     public int insertUser(UserVO vo);
     public int modifyUser(UserVO vo);
 }
